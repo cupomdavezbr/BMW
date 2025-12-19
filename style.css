@@ -149,3 +149,25 @@ footer { background-color: #0a0a0a; color: #555; padding: 40px; text-align: cent
     .models-grid { grid-template-columns: 1fr; }
     nav { padding: 15px; }
 }
+
+/* --- Estilos do Rodapé com Links --- */
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white; /* Fica branco quando passa o mouse */
+    text-decoration: underline;
+}
+
+.separator {
+    color: #444;
+    margin: 0 10px;
+}
