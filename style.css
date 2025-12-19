@@ -372,3 +372,79 @@ footer { background: #111; color: #888; padding: 50px 5%; border-top: 4px solid 
     .contract-actions .btn-outline { flex: 1; text-align: center; }
     .progress-container { width: 100%; }
 }
+
+/* --- MENU MOBILE (Responsivo) --- */
+
+/* Esconde o ícone do menu no computador */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--corporate-dark);
+}
+
+/* --- MENU MOBILE (Responsivo) --- */
+
+/* 1. Computador: Ícone escondido, menu normal */
+.mobile-menu-icon {
+    display: none; /* Esconde o ícone de 3 riscos no PC */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--corporate-dark);
+}
+
+/* 2. Celular e Tablet (Telas menores que 900px) */
+@media (max-width: 900px) {
+    
+    /* Mostra o ícone de menu */
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Esconde os links inicialmente */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Fica logo abaixo da barra branca */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column; /* Um item embaixo do outro */
+        align-items: center;
+        
+        /* O Segredo: Altura zero e invisível */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        
+        /* Animação suave */
+        transition: all 0.4s ease-in-out;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+    }
+
+    /* Quando o Javascript adicionar a classe .active, o menu aparece */
+    .nav-links.active {
+        max-height: 500px; /* Altura suficiente para mostrar tudo */
+        opacity: 1;
+        padding-bottom: 20px;
+    }
+
+    /* Estilo dos links no celular */
+    .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid #f9f9f9;
+        font-size: 1.1rem;
+    }
+
+    /* Botão de login no celular */
+    .btn-login {
+        margin-top: 15px;
+        width: 80%;
+        justify-content: center;
+        padding: 12px;
+    }
+}
+    
