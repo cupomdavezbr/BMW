@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Contratos | Portal do Cliente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Portal do <strong>Cliente</strong></div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="servicos.html">Serviços</a>
+                <button class="btn-login" onclick="irParaWhatsapp('Sair')"><i class="fas fa-sign-out-alt"></i> Sair</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Meus Contratos</h1>
+        <p>Acompanhe a evolução do seu financiamento e gerencie seus veículos.</p>
+    </header>
+
+    <main class="main-container">
+        <div class="contracts-list">
+            
+            <div class="contract-card">
+                <div class="contract-info">
+                    <span class="status-badge status-active">● Ativo</span>
+                    <h3>SUV Premium Híbrido</h3>
+                    <span>Contrato: 004921-X • CDC Flex</span>
+                    
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Parcela 12/48</span>
+                            <span>25% Pago</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contract-actions">
+                    <button class="btn-outline" onclick="irParaWhatsapp('2via')">2ª Via</button>
+                    <button class="btn-outline" onclick="irParaWhatsapp('Quitacao')">Antecipar</button>
+                    <button class="btn-primary" onclick="irParaWhatsapp('Atendimento')">Detalhes</button>
+                </div>
+            </div>
+
+            <div class="contract-card" style="opacity: 0.8;">
+                <div class="contract-info">
+                    <span class="status-badge status-finished">Quitado</span>
+                    <h3>Sedan Executivo 2.0</h3>
+                    <span>Contrato: 003100-B • Finalizado em 2023</span>
+                </div>
+                
+                <div class="contract-actions">
+                    <button class="btn-outline" onclick="irParaWhatsapp('BaixaGravame')">Termo de Quitação</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Portal do <strong>Cliente</strong></div>
+            <p>&copy; 2024 Serviços Financeiros.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

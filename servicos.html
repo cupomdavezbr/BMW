@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Portal do Cliente</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Portal do <strong>Cliente</strong></div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="meus-contratos.html">Meus Contratos</a>
+                <button class="btn-login" onclick="irParaWhatsapp('Login')">
+                    <i class="far fa-user"></i> Acessar Conta
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Central de Serviços</h1>
+        <p>Selecione a opção desejada para iniciar seu atendimento digital via WhatsApp.</p>
+    </header>
+
+    <main class="main-container">
+        
+        <h2 style="margin-bottom: 30px; font-weight: 300; color: #555;">Serviços Financeiros</h2>
+        <div class="services-grid-full">
+            
+            <div class="service-item" onclick="irParaWhatsapp('2via')">
+                <i class="fas fa-barcode"></i>
+                <h4>2ª Via de Boleto</h4>
+                <p>Emita a via atualizada do seu boleto bancário.</p>
+            </div>
+
+            <div class="service-item" onclick="irParaWhatsapp('Quitacao')">
+                <i class="fas fa-calculator"></i>
+                <h4>Simular Quitação</h4>
+                <p>Cálculo para liquidação total ou parcial do contrato.</p>
+            </div>
+
+            <div class="service-item" onclick="irParaWhatsapp('IR')">
+                <i class="fas fa-file-invoice"></i>
+                <h4>Informe de Rendimentos</h4>
+                <p>Documento para declaração de Imposto de Renda.</p>
+            </div>
+
+            <div class="service-item" onclick="irParaWhatsapp('Extrato')">
+                <i class="fas fa-list-alt"></i>
+                <h4>Extrato de Pagamentos</h4>
+                <p>Consulte o histórico de parcelas pagas.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-bottom: 30px; margin-top: 50px; font-weight: 300; color: #555;">Gestão do Contrato</h2>
+        <div class="services-grid-full">
+            
+            <div class="service-item" onclick="irParaWhatsapp('Transferencia')">
+                <i class="fas fa-exchange-alt"></i>
+                <h4>Transferência de Dívida</h4>
+                <p>Transfira seu financiamento para outra pessoa.</p>
+            </div>
+
+            <div class="service-item" onclick="irParaWhatsapp('Substituicao')">
+                <i class="fas fa-car"></i>
+                <h4>Substituição de Garantia</h4>
+                <p>Troque o veículo mantendo o mesmo contrato.</p>
+            </div>
+
+            <div class="service-item" onclick="irParaWhatsapp('BaixaGravame')">
+                <i class="fas fa-unlock"></i>
+                <h4>Baixa de Gravame</h4>
+                <p>Solicite a liberação do veículo após a quitação.</p>
+            </div>
+
+            <div class="service-item" onclick="irParaWhatsapp('Dados')">
+                <i class="fas fa-user-edit"></i>
+                <h4>Alteração de Dados</h4>
+                <p>Atualize seu endereço, e-mail ou telefone.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Portal do <strong>Cliente</strong></div>
+            <p>&copy; 2024 Serviços Financeiros.</p>
+            <div class="legal-links">
+                <a href="privacidade-ouvidoria.html">Privacidade</a> • 
+                <a href="privacidade-ouvidoria.html">Ouvidoria</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
