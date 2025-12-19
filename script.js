@@ -1,43 +1,72 @@
-function irParaWhatsapp(interesse) {
-    // 1. SEU NÚMERO AQUI (apenas números)
-    const telefone = "5511999999999"; 
+// --- LÓGICA DA CALCULADORA ---
+let valorVeiculo = 50000;
+let valorEntrada = 10000;
+let meses = 36; // Padrão
+const taxaJuros = 0.0159; // 1.59% a.m.
+
+const rangeValor = document.getElementById('range-valor');
+const rangeEntrada = document.getElementById('range-entrada');
+const displayValor = document.getElementById('display-valor');
+const displayEntrada = document.getElementById('display-entrada');
+const displayParcela = document.getElementById('valor-parcela');
+
+function calcular() {
+    valorVeiculo = parseInt(rangeValor.value);
     
-    // 2. A frase padrão OBRIGATÓRIA solicitada
-    let mensagem = "Olá, gostaria de iniciar meu atendimento.";
+    // Ajusta o máximo da entrada dinamicamente
+    rangeEntrada.max = valorVeiculo - 1000;
     
-    // 3. Adiciona contexto se o cliente clicou em uma categoria
-    if (interesse) {
-        mensagem += ` Tenho interesse especial na categoria: ${interesse}.`;
-    } 
+    if(parseInt(rangeEntrada.value) >= valorVeiculo) {
+        rangeEntrada.value = valorVeiculo - 5000;
+    }
     
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const baseUrl = isMobile ? "https://api.whatsapp.com/send" : "https://web.whatsapp.com/send";
+    valorEntrada = parseInt(rangeEntrada.value);
+
+    // Formata Dinheiro
+    const fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    displayValor.innerText = fmt.format(valorVeiculo);
+    displayEntrada.innerText = fmt.format(valorEntrada);
+
+    const valorFinanciado = valorVeiculo - valorEntrada;
     
-    const linkWhatsApp = `${baseUrl}?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
-    
-    window.open(linkWhatsApp, '_blank');
+    // Fórmula Price
+    const pmt = valorFinanciado * ( (taxaJuros * Math.pow(1 + taxaJuros, meses)) / (Math.pow(1 + taxaJuros, meses) - 1) );
+
+    displayParcela.innerText = fmt.format(pmt);
 }
 
-// Lógica de Animações (não precisa alterar nada aqui)
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+function setPrazo(prazo) {
+    meses = prazo;
+    document.querySelectorAll('.btn-prazo').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    calcular();
+}
 
+function irParaWhatsapp() {
+    const telefone = "5511999999999"; // SEU NÚMERO
+    const msg = "Olá! Vim pelo site novo e gostaria de simular um financiamento.";
+    window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function enviarSimulacao() {
+    const telefone = "5511999999999"; // SEU NÚMERO
+    const parcela = displayParcela.innerText;
+    const msg = `Olá! Fiz a simulação no site.\nVeículo: ${displayValor.innerText}\nEntrada: ${displayEntrada.innerText}\nPrazo: ${meses}x\nParcela: ${parcela}`;
+    window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+rangeValor.addEventListener('input', calcular);
+rangeEntrada.addEventListener('input', calcular);
+
+document.addEventListener('DOMContentLoaded', () => {
+    calcular();
+    
+    // Animação de entrada
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('show');
         });
-    }, { threshold: 0.1 });
-
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
+    });
+    document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
 });

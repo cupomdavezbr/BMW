@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacidade e Ouvidoria | Portal do Cliente</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilos específicos para esta página de texto */
+        body { background-color: #f4f6f9; }
+
+        .legal-header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 80px 20px 100px; /* Padding extra embaixo para o card subir */
+            text-align: center;
+        }
+
+        .legal-header h1 {
+            font-weight: 300;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .legal-header p {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: -60px auto 50px; /* Sobe por cima do header */
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            padding: 50px;
+            position: relative;
+        }
+
+        h2 {
+            color: #1C69D4; /* Azul BMW */
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type { margin-top: 0; }
+
+        p, li {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        ul { padding-left: 20px; margin-bottom: 20px; }
+
+        /* Estilo do Box de Ouvidoria */
+        .ouvidoria-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #1C69D4;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .btn-whatsapp-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp-large:hover {
+            background-color: #1ebc57;
+            transform: translateY(-2px);
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-voltar:hover { color: white; }
+
+        @media (max-width: 768px) {
+            .content-wrapper { padding: 30px 20px; margin-top: -40px; }
+            .legal-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="legal-header">
+        <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+            <a href="index.html" class="btn-voltar">← Voltar para o Início</a>
+        </div>
+        <h1>Privacidade e Transparência</h1>
+        <p>Entenda como cuidamos dos seus dados e como acionar a Ouvidoria.</p>
+    </header>
+
+    <main class="content-wrapper">
+        
+        <section>
+            <h2>Política de Privacidade</h2>
+            <p>A segurança dos seus dados é prioridade para a BMW Financial Services. Em conformidade com a Lei Geral de Proteção de Dados (LGPD), garantimos que:</p>
+            <ul>
+                <li>Seus dados são utilizados exclusivamente para fins de análise de crédito, gestão contratual e atendimento.</li>
+                <li>Utilizamos criptografia de ponta a ponta em todas as transações realizadas neste portal.</li>
+                <li>Não compartilhamos suas informações pessoais com terceiros para fins publicitários sem o seu consentimento explícito.</li>
+            </ul>
+            <p>Para solicitar a exclusão, alteração ou portabilidade dos seus dados, entre em contato através dos nossos canais de atendimento oficiais.</p>
+        </section>
+
+        <section>
+            <h2>Ouvidoria Corporativa</h2>
+            <p>A Ouvidoria é um canal de segunda instância. Ela deve ser acionada quando a solução apresentada pelos canais de atendimento convencionais (SAC ou Chat) não foi satisfatória.</p>
+            
+            <p>Nosso objetivo é agir com imparcialidade e transparência na defesa dos direitos dos nossos clientes.</p>
+
+            <div class="ouvidoria-box">
+                <h3 style="margin-bottom: 10px; color: #333;">Precisa falar com o Ouvidor?</h3>
+                <p style="font-size: 0.95rem;">Nosso atendimento via WhatsApp é exclusivo e documentado. Clique abaixo para iniciar o atendimento.</p>
+                
+                <button onclick="falarOuvidoria()" class="btn-whatsapp-large">
+                    <i class="fab fa-whatsapp"></i> Falar com a Ouvidoria
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content" style="justify-content: center; text-align: center;">
+            <p>&copy; 2024 BMW Financial Services. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function falarOuvidoria() {
+            // COLOQUE SEU NÚMERO AQUI
+            const telefone = "5511999999999"; 
+            
+            // Mensagem específica para a Ouvidoria (Passa mais seriedade)
+            const mensagem = "Olá. Gostaria de registrar uma manifestação formal na Ouvidoria. Já possuo um número de protocolo anterior.";
+            
+            const link = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
+            window.open(link, '_blank');
+        }
+    </script>
+
+</body>
+</html>
