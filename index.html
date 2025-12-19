@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Financiamento de veículos premium. Taxas exclusivas e atendimento via WhatsApp.">
+    <title>Prime Auto Financiamentos | Experiência Premium</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Prime <span style="font-weight:300">Auto</span></div>
+        <button class="btn-nav" onclick="irParaWhatsapp()">Fale Conosco</button>
+    </nav>
+
+    <header class="hero" style="background-image: url('bmw.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content hidden">
+            <span class="tag">Condições Exclusivas</span>
+            <h1>O Carro dos Seus Sonhos <br>Está ao Seu Alcance.</h1>
+            <p>Soluções financeiras personalizadas para quem exige excelência. Inicie seu atendimento exclusivo agora.</p>
+            <button class="btn-primary" onclick="irParaWhatsapp()">
+                <i class="fab fa-whatsapp"></i> Iniciar Atendimento
+            </button>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-card hidden">
+                <i class="fas fa-percentage"></i>
+                <h3>Taxas Competitivas</h3>
+                <p>Negociações especiais e taxas reduzidas para perfis selecionados.</p>
+            </div>
+            <div class="feature-card hidden">
+                <i class="fas fa-file-signature"></i>
+                <h3>Sem Burocracia</h3>
+                <p>Processo 100% digital e otimizado. Saia de carro novo com rapidez.</p>
+            </div>
+            <div class="feature-card hidden">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Segurança Total</h3>
+                <p>Transparência em cada etapa do seu contrato de financiamento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="models-showcase">
+        <div class="section-header hidden">
+            <h2>Escolha sua Categoria</h2>
+            <p>Trabalhamos com as melhores marcas e modelos do mercado.</p>
+        </div>
+        
+        <div class="models-grid">
+            <div class="model-card hidden">
+                <div class="model-image" style="background-image: url('bmw1.jpg')"></div>
+                <div class="model-info">
+                    <h4>Sedans Executivos</h4>
+                    <p>Conforto e presença.</p>
+                    <button onclick="irParaWhatsapp('Sedan Executivo')">Simular Categoria</button>
+                </div>
+            </div>
+
+            <div class="model-card hidden">
+                <div class="model-image" style="background-image: url('bmw2.jpg')"></div>
+                <div class="model-info">
+                    <h4>SUVs Premium</h4>
+                    <p>Espaço e versatilidade.</p>
+                    <button onclick="irParaWhatsapp('SUV Premium')">Simular Categoria</button>
+                </div>
+            </div>
+
+            <div class="model-card hidden">
+                <div class="model-image" style="background-image: url('bmw3.jpg')"></div>
+                <div class="model-info">
+                    <h4>Esportivos & Elétricos</h4>
+                    <p>Alta performance.</p>
+                    <button onclick="irParaWhatsapp('Esportivo/Elétrico')">Simular Categoria</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials hidden">
+        <div class="testimonial-content">
+            <i class="fas fa-quote-left"></i>
+            <p class="quote">"O atendimento superou minhas expectativas. Consegui viabilizar meu veículo novo com uma taxa excelente e o processo foi extremamente rápido."</p>
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto do Cliente">
+                <div>
+                    <strong>Ricardo M.</strong>
+                    <span>Cliente Satisfeito</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final hidden">
+        <h2>Realize seu objetivo hoje.</h2>
+        <p>Nossos consultores financeiros estão online.</p>
+        <button class="btn-outline" onclick="irParaWhatsapp()">Falar com Consultor Agora</button>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="politicas.html">Política de Privacidade</a>
+                <span class="separator">|</span>
+                <a href="politicas.html">Termos de Uso</a>
+                <span class="separator">|</span>
+                <a href="#" onclick="irParaWhatsapp()">Fale Conosco</a>
+            </div>
+            <p>&copy; 2024 Prime Auto Financiamentos. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top:10px;">
+                Imagens meramente ilustrativas. Crédito sujeito a análise e aprovação.
+                <br>A Prime Auto atua como correspondente bancário.
+            </p>
+        </div>
+    </footer>
+
+    <a href="#" onclick="irParaWhatsapp()" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
